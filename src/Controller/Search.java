@@ -1,0 +1,36 @@
+package Controller;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+@WebServlet(name = "Search",urlPatterns = "/search")
+public class Search extends HttpServlet {
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String searchTerm = request.getParameter("itemName");
+        String type = (request.getParameter("type") == null) ? "search": request.getParameter("type");
+
+        request.setAttribute("searchterm",searchTerm);
+
+        if(searchTerm.isEmpty() && !type.isEmpty()){
+            request.setAttribute("type",type);
+            request.getRequestDispatcher("/page").forward(request,response);
+        }else if(searchTerm.isEmpty()) {
+            request.getRequestDispatcher("/").forward(request,response);
+        }else {
+            request.setAttribute("type",type);
+            request.getRequestDispatcher("/page").forward(request,response);
+        }
+
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+}

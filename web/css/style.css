@@ -1,0 +1,650 @@
+
+body {
+    background-color: #dff9fb;
+    font-family: 'Roboto', 'Lato', serif;
+}
+
+/* Nav Code start */
+
+.nav-bar {
+    background-color: #dff9fb;
+    position: fixed;
+    width: 300px;
+    height: 500px;
+    margin-top: 150px;
+}
+
+nav {
+    padding: 0 25px;
+    display: flex;
+    height: inherit;
+
+}
+
+.nav-bar h3 {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Roboto, Lato, serif;
+    padding: 25px 25px;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+nav ul li {
+    display: flex;
+    align-items: center;
+
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 24px;
+    color: #2c3e50;
+    font-family: Lato, serif;
+    transition: all .2s;
+    padding: 10px 10px 10px 0;
+}
+
+li:hover a {
+    transform: scale(1.2);
+    font-weight: 700;
+}
+
+li:hover .icon-background {
+    transform: scale(1.2);
+}
+
+.icon-background {
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all .2s;
+}
+
+.icon-background svg {
+    margin: 5px 5px;
+}
+
+
+/* Nav Code end */
+
+
+
+
+/* Main code starts here */
+
+.main-container {
+    margin-left: 300px;
+    margin-right: 50px;
+    overflow: hidden;
+
+}
+
+main {
+    margin-top: 150px;
+
+}
+
+.cards-heading {
+    width: 80%;
+    margin: 75px auto 0 auto;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: Nunito, serif;
+    text-align: start;
+}
+
+.hero {
+    width: 90%;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
+
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: top;
+
+}
+
+.cards {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+
+}
+
+.card {
+    align-self: flex-start;
+    height: 150px;
+    width: 200px;
+    background-color: white;
+    margin: 50px 15px;
+    border-radius: 20px;
+    position: relative;
+    flex: 0 1 200px;
+    flex-direction: column;
+
+    transition: all 200ms ease;
+}
+
+.card a {
+    text-decoration: none;
+    color: #00483B;
+}
+
+.card:hover {
+    transform: scale(1.1);
+
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+
+}
+
+.card-title {
+    text-align: center;
+    margin-top: 65px;
+    font-family: Roboto, serif;
+    max-height: 18px;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    font-weight: normal;
+    color: #054035;
+
+}
+
+
+.card img {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+    object-fit: contain;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 15px 0 15px;
+}
+
+.card-action {
+
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.card-action:hover {
+    transform: translateY(1px);
+}
+
+.card-action .add-cart svg {
+    width: 24px;
+    height: 24px;
+    background-color: #00483B;
+    border-radius: 50%;
+    fill: white;
+}
+
+.card-action .remove-cart svg {
+    width: 24px;
+    height: 24px;
+    background-color: #c0392b;
+    border-radius: 50%;
+    fill: white;
+}
+
+.card-price {
+    font-size: 18px;
+    font-family: Lato, serif;
+    font-weight: bold;
+    color: #00483B;
+}
+
+/* Main code ends here */
+
+
+
+
+
+
+/* Header code starts here */
+
+.header-container {
+    background-color: #dff9fb;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+header {
+    background-color: #1e272e;
+    height: 70px;
+    margin: 40px auto 0 auto;
+    width: 1440px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.actions a {
+    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.search-bar {
+    width: 600px;
+    height: 40px;
+    margin-left: 25%;
+    position: relative;
+}
+
+.input-form {
+    display: flex;
+    height: 100%;
+
+}
+
+.item_input {
+    flex: 1;
+    text-indent: 15px;
+    border-radius: 100px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    padding-right: 120px;
+    letter-spacing: 1px;
+}
+
+.search_btn {
+    position: absolute;
+    width: 100px;
+    background-color: #2C3A47;
+    color: white;
+    height: 34px;
+    right: 3px;
+    border-radius: 50px;
+    cursor: pointer;
+    top: 3px;
+    elevation: 0;
+    outline: none;
+    border: none;
+    transition: all .4s;
+}
+
+.search_btn:hover {
+    transform: translateY(1px);
+}
+
+.header-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+
+}
+
+.cart-link {
+    position: relative;
+}
+
+.cart-count-container {
+    z-index: 1;
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: orangered;
+    right: -5px;
+    top: 0px;
+}
+
+.cart-count {
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.hi1 {
+    background-color: rgba(44, 62, 80, 1.0);
+}
+
+.hi2 {
+    background-color: white;
+}
+
+.hi1 svg {
+    fill: white;
+    margin: 8px 8px;
+}
+
+.hi2 svg {
+    fill: black;
+}
+
+.header-login {
+    width: 120px;
+    height: 36px;
+    margin-top: 6px;
+    margin-right: 40px;
+    z-index: -1;
+    display: inline-block;
+    background-color: rgba(44, 62, 80, 1.0);
+    border-radius: 50px;
+}
+
+.actions {
+    display: flex;
+}
+
+.actions h3 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/* Header code ends here */
+
+/* Pagination code ends here */
+
+    .pagination {
+        width: 300px;
+        height: 34px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto;
+        border: 1px solid transparent;
+}
+
+    .pag-link {
+        text-decoration: none;
+        font-size: 20px;
+        color: #2c3e50;
+        display: inline-block;
+        width: 20px;
+        height: 100%;
+        text-align: center;
+        margin: 7px 0 0 6px;
+    }
+
+    .pag-num {
+        margin: 0 10px;
+        height: 100%;
+        width: 34px;
+        display: inline-block;
+        border: 1px solid #2c3e50;
+
+    }
+
+    .selected {
+        background-color: #34495e;
+
+    }
+
+    .selected a {
+        color: white;
+    }
+
+/* Pagination code ends here */
+
+
+/* Index page styles stars here  */
+
+
+/* Article card style starts here  */
+
+
+.articles {
+    display: flex;
+    margin: 120px auto;
+    justify-content: space-between;
+    width: 90%;
+
+}
+
+.article-card {
+    background-color: white;
+    height: 460px;
+    width: 330px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 6px -6px rgba(0,0,0,.2);
+    transition: all .4s;
+}
+
+.article-card:hover {
+    transform: scale(1.1);
+}
+
+.article-image {
+
+    width: 100%;
+    height: 250px;
+
+}
+
+.article-content {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.article-title {
+   font-size: 24px;
+    color: #282529;
+    font-family: Lato, serif;
+    margin: 30px 25px 15px 25px;
+    max-height: 24px;
+    min-height: 24px;
+}
+
+.article-details {
+    font-size: 18px;
+    color: #282529;
+    font-family: Lato, serif;
+    margin: 5px 25px 15px 25px;
+    max-height: 52px;
+    min-height: 52px;
+}
+
+.article-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #282529;
+    text-decoration: none;
+    min-width: 270px;
+    height: 36px;
+    background-color: transparent;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid rgb(60,60,60);
+    transition: all .3s;
+}
+
+.article-button:hover {
+    transform: translateY(2px);
+}
+
+/* Article card style ends here  */
+
+/* Featured card style ends here  */
+
+.featured {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    margin: 0 auto;
+}
+
+.new-arrivals, .best-sellers, .our-promotions {
+    margin: 10px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+}
+
+.featured-title {
+    font-size: 24px;
+    color: #1E272E;
+    font-family: Roboto, serif;
+
+}
+
+.featured-title-bold {
+    font-weight: bold;
+}
+
+.featured-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+
+}
+
+.featured-card {
+    width: 100%;
+    background-color: white;
+    height: 100px;
+    margin: 15px 0 ;
+    display: flex;
+    border-radius: 5px;
+    overflow: hidden;
+
+}
+
+.featured-card-img {
+    max-width: 100px;
+    min-width: 100px;
+    padding: 5px;
+    object-fit: contain;
+
+}
+
+.featured-card-content {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 15px;
+    justify-content: space-between;
+}
+
+.featured-content-title {
+    font-size: 14px;
+    font-weight: normal;
+    font-family: Lato, serif;
+    color: #525252;
+    min-height: 36px;
+    max-height: 42px;
+}
+
+.per-unit {
+    font-size: 12px;
+    color: grey;
+}
+
+.featured-content-price {
+    color: #1d376c;
+    font-weight: bold;
+    font-family: Lato, serif;
+}
+
+
+/* Featured card style ends here  */
+
+/* Promo ads start here  */
+
+.promo-ads {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 50px auto;
+    flex-wrap: wrap;
+}
+
+.promos {
+    margin: 10px;
+    width: 48%;
+    flex-grow: 1;
+}
+
+.promos img {
+    height: auto;
+    max-width: 570px;
+    object-fit: contain;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Promo ads ends here  */
+
+
+
+
+
+/* Index page styles ends here  */
+
+
+
+/* footer code starts here */
+
+footer {
+    min-height: 100px;
+    background-color: greenyellow;
+    margin-left: 300px;
+    margin-right: 50px;
+}
+
+
+/* Footer code ends here */
+
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f2f6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #485460;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1e272e;
+}
+
+/* Scroll bar end */
+

@@ -90,7 +90,7 @@
     String onlineString = isOnline == 1 ? "Online":"Offline";
     String onlineClass = isOnline == 1 ? "Online":"";
     int isActive = user.getActive();
-    String activeAttribute = isActive == 1 ? "checked":"checked";
+    String activeAttribute = isActive == 1 ? "checked":"";
     String role = user.getRole();
     boolean isAdmin = role.equals("Administrator");
 
@@ -449,7 +449,7 @@
                     <td class="edit-field">
                         <div class="user-field-text-edit active-switch">
                             <label class="switch">
-                                <input type="checkbox"  name="active"  <%=activeAttribute%>>
+                                <input type="checkbox" value="1"  name="active"  <%=activeAttribute%>>
                                 <span class="slider round"></span>
                             </label>
 

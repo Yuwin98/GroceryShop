@@ -2,6 +2,7 @@ package util;
 
 import Model.User;
 import org.apache.commons.fileupload.FileItem;
+import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -15,7 +16,7 @@ import java.util.List;
 public class Upload {
 
 
-    public static User  UploadImage(ServletContext context, HttpServletRequest request) {
+    public static User UploadImage(ServletContext context, HttpServletRequest request) {
 
         File file;
         User user = new User();
@@ -44,18 +45,20 @@ public class Upload {
                     FileItem fi =(FileItem) i.next();
 
                     if(!fi.isFormField()) {
-                        String fieldName = fi.getFieldName();
-                        fileName = fi.getName();
-                        boolean isInMemory = fi.isInMemory();
-                        long sizeInBytes = fi.getSize();
 
-                        if(fileName.lastIndexOf("\\") >= 0) {
-                            file = new File(filePath + fileName.substring(fileName.lastIndexOf("\\")));
-                        }else {
-                            file = new File(filePath + fileName.substring(fileName.lastIndexOf("\\") + 1));
+                        if(fi.getName() != null && !fi.getName().equals("")) {
+
+                            fileName = fi.getName();
+                            if (fileName.lastIndexOf("\\") >= 0) {
+                                file = new File(filePath + fileName.substring(fileName.lastIndexOf("\\")));
+                            } else {
+                                file = new File(filePath + fileName.substring(fileName.lastIndexOf("\\") + 1));
+                            }
+                            if (!file.exists()) {
+                                fi.write(file);
+                            }
+
                         }
-
-                        fi.write(file);
                         user.setPath(fileName);
 
                     }else  {
@@ -98,12 +101,14 @@ public class Upload {
                 break;
             case "role":
                 user.setRole(fi.getString());
+                break;
             case "active": {
-                if (fi.getString().equals("")) {
-                    user.setActive(0);
-                } else {
+                user.setActive(0);
+                System.out.println(fi.getString());
+                if (fi.getString().equals("1")) {
                     user.setActive(1);
                 }
+
             }
             break;
 

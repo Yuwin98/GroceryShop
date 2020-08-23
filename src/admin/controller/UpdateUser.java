@@ -14,20 +14,9 @@ import java.io.IOException;
 
 @WebServlet(name = "UpdateUser",urlPatterns = "/update-user")
 public class UpdateUser extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-//        int id = 1;
-//        String firstName = request.getParameter("firstname");
-//        System.out.println(firstName);
-//        String lastName = request.getParameter("lastname");
-//        System.out.println(lastName);
-//        String email = request.getParameter("email");
-//        System.out.println(lastName);
         User updatedUser = Upload.UploadImage(getServletContext(),request);
-//        String contactNumber = String.valueOf(request.getParameter("contactnumber"));
-//        String role = request.getParameter("role") ;
-//        int active = request.getAttribute("active") != null ? 1:0;
-
 
         UserManager manager = new UserManager();
         manager.updateUser(updatedUser.getId(),updatedUser);

@@ -23,25 +23,7 @@ public class AddUser extends HttpServlet {
         }
 
 
-        String firstName = request.getParameter("firstname");
-        String lastName = request.getParameter("lastname");
-        String username = request.getParameter("username");
-        String email = request.getParameter("email");
         User user = Upload.UploadImage(getServletContext(),request);
-        String password = request.getParameter("password") == null ? "password":request.getParameter("password");
-        String contactNumber = String.valueOf(request.getParameter("contactnumber"));
-        String role = request.getParameter("role");
-        int active = request.getParameter("active") != null ? 1:0;
-
-//        User user = new User();
-//        user.setName(firstName + " " + lastName);
-//        user.setUsername(username);
-//        user.setEmail(email);
-//        user.setPath(path);
-//        user.setPassword(password);
-//        user.setContactNumber(contactNumber);
-//        user.setRole(role);
-//        user.setActive(active);
 
         UserManager manager = new UserManager();
         if(manager.userExist(user.getUsername())) {

@@ -69,6 +69,88 @@ body {
 
 /* Admin login starts here  */
 
+/* Admin Dashboard starts here  */
+
+.admin-header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: #34495e;
+    gap: 20px;
+
+}
+
+.admin-header img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2);
+}
+
+.admin-header h4 {
+    margin-right: 50px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 80px;
+    margin-top: 25px;
+
+}
+
+.info-card:nth-of-type(odd) {
+    color: #2AA6AE;
+}
+.info-card:nth-of-type(even) {
+    color: #A04C7E;
+}
+
+.info-card {
+    width: 300px;
+    height: 100px;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.2);
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+
+
+.info-card-title {
+    color: #2c3e50;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.info-card-value {
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+.info-card-sub {
+    font-size: 10px;
+    color: #95a5a6;
+    font-weight: bold;
+}
+
+
+/* Admin Dashboard starts here  */
 
 /* User table starts here  */
 
@@ -82,6 +164,17 @@ body {
     overflow-y: scroll;
     box-shadow: 0 0 20px rgba(0,0,0,.15);
     /*transition: all 150ms  50ms ease-out;*/
+}
+
+.order-container {
+    position: absolute;
+    width: 65vw;
+    height: 60%;
+    margin: 60px 20px 40px 110px;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    overflow-y: scroll;
+    box-shadow: 0 0 20px rgba(0,0,0,.15);
 }
 
 .table-users {
@@ -114,8 +207,9 @@ body {
 }
 
 .table-user-heading th div{
-    width: 120px;
+    min-width: 100px;
     display: flex;
+    font-weight: normal;
     align-items: center;
     justify-content: space-between;
     height: 30px;
@@ -490,6 +584,11 @@ input:checked + .slider:before {
     max-height: 80px;
 }
 
+.user-data td {
+    vertical-align: middle;
+    font-size: 18px;
+}
+
 /* End product styles */
 
 
@@ -553,6 +652,17 @@ input:checked + .slider:before {
     z-index: -1;
     width: 1180px;
     margin: 60px 20px 40px 280px;
+}
+
+.nav-bar:hover ~ .order-container {
+    z-index: -1;
+    width: 1180px;
+    margin: 60px 20px 40px 280px;
+}
+
+
+.nav-bar:hover ~ .info-cards {
+    margin-left: 256px;
 }
 
 .nav-bar:hover .nav-title {

@@ -29,8 +29,8 @@
     <table class="table-users">
         <thead >
         <tr class="table-user-heading">
-            <th colspan="7">PRODUCT TABLE</th>
-            <th colspan="1">
+            <th colspan="6">PRODUCT TABLE</th>
+            <th colspan="3">
                 <div>
                     <a href="add-user">ADD PRODUCT</a>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="20px" height="20px">

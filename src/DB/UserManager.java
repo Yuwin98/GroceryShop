@@ -45,7 +45,7 @@ public class UserManager implements UserDAO {
     public void addUserAdmin(User user) {
 
         try {
-            PreparedStatement pstmt = conn.prepareStatement("Insert into user(name,username,email,password,path,contactnumber,role,active) " +
+            PreparedStatement pstmt = conn.prepareStatement("Insert into user(name,username,email,password,path,contactnumber,role,active)" +
                     "values(?,?,?,?,?,?,?,?)");
 
             pstmt.setString(1,user.getName());

@@ -28,8 +28,8 @@ public class Authentication extends HttpServlet {
         }
 
         if(!manager.isActive(userId)){
-           // response.sendRedirect("admin");
-          //  return;
+            response.sendRedirect("admin");
+            return;
         }
 
         if(manager.isAdmin(userId)) {

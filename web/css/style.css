@@ -623,6 +623,17 @@ header {
 
 /* Index page styles ends here  */
 
+/* Login page */
+
+.user-login {
+    width: 100%;
+    background-color: #DFF9FB;
+    height: 100vh;
+}
+
+
+/* Login page end */
+
 
 
 /* footer code starts here */

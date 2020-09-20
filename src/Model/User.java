@@ -11,6 +11,7 @@ public class User implements Serializable {
     private String password;
     private String contactNumber;
     private String path;
+    private String address;
     private int cart_count;
     private String role;
     private int active;
@@ -29,6 +30,7 @@ public class User implements Serializable {
         role = "";
         active = 0;
         online = 0;
+        address = "";
 
     }
 
@@ -120,5 +122,13 @@ public class User implements Serializable {
 
     public void setOnline(int online) {
         this.online = online;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

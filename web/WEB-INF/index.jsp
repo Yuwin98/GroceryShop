@@ -74,16 +74,17 @@
                             String name = card.getName();
                             String price = card.getPrice();
                             String path = request.getContextPath() + "/images/" + card.getPath();
-
+                            int id = card.getId();
                     %>
-                    <div class="featured-card">
-                        <img src="<%=path%>" alt="" class="featured-card-img">
-                        <div class="featured-card-content">
-                            <h2 class="featured-content-title"><%=name%></h2>
-                            <h3 class="featured-content-price"><span class="per-unit">Per 1 unit(s)</span><br>Rs.<%=price%></h3>
+                    <a href="product-page?id=<%=id%>&o=i" class="fc-link">
+                        <div class="featured-card">
+                            <img src="<%=path%>" alt="" class="featured-card-img">
+                            <div class="featured-card-content">
+                                <h2 class="featured-content-title"><%=name%></h2>
+                                <h3 class="featured-content-price"><span class="per-unit">Per 1 unit(s)</span><br>Rs.<%=price%></h3>
+                            </div>
                         </div>
-                    </div>
-
+                    </a>
                     <% } %>
                 </div>
             </div>
@@ -96,19 +97,21 @@
                         List<HomeCard> bestCards = cardMap.get("best");
 
                         for(HomeCard card : bestCards){
-
                             String name = card.getName();
                             String price = card.getPrice();
                             String path = request.getContextPath() + "/images/" + card.getPath();
-
+                            int id = card.getId();
                     %>
+                    <a href="product-page?id=<%=id%>&o=i" class="fc-link">
                     <div class="featured-card">
-                        <img src="<%=path%>" alt="" class="featured-card-img">
-                        <div class="featured-card-content">
-                            <h2 class="featured-content-title"><%=name%></h2>
-                            <h3 class="featured-content-price"><span class="per-unit">Per 1 unit(s)</span><br>Rs.<%=price%></h3>
+                            <img src="<%=path%>" alt="" class="featured-card-img">
+                            <div class="featured-card-content">
+                                <h2 class="featured-content-title"><%=name%></h2>
+                                <h3 class="featured-content-price"><span class="per-unit">Per 1 unit(s)</span><br>Rs.<%=price%></h3>
+                            </div>
                         </div>
-                    </div>
+                    </a>
+
 
                     <% } %>
                 </div>
@@ -126,16 +129,17 @@
                             String name = card.getName();
                             String price = card.getPrice();
                             String path = request.getContextPath() + "/images/" + card.getPath();
-
+                            int id = card.getId();
                     %>
+                    <a href="product-page?id=<%=id%>&o=i" class="fc-link">
                     <div class="featured-card">
-                        <img src="<%=path%>" alt="" class="featured-card-img">
-                        <div class="featured-card-content">
-                            <h2 class="featured-content-title"><%=name%></h2>
-                            <h3 class="featured-content-price"><span class="per-unit">Per 1 unit(s)</span><br>Rs.<%=price%></h3>
+                            <img src="<%=path%>" alt="" class="featured-card-img">
+                            <div class="featured-card-content">
+                                <h2 class="featured-content-title"><%=name%></h2>
+                                <h3 class="featured-content-price"><span class="per-unit">Per 1 unit(s)</span><br>Rs.<%=price%></h3>
+                            </div>
                         </div>
-                    </div>
-
+                    </a>
                     <% } %>
                 </div>
             </div>

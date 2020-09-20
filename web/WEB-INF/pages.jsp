@@ -49,8 +49,8 @@
             %>
 
                 <div class="card">
-                    <a href="#" class="card-link">
-                    <img src="<%= path%>" alt="<%= name%>">
+                    <a href="product-page?id=<%=id%>">
+                    <img src="<%= path%>" alt="<%=name%>">
                     <h3 class="card-title"><%=name%></h3>
                     <div class="options">
                         <p class="card-price">Rs<%=price%></p>

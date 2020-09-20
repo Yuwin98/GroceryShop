@@ -44,27 +44,69 @@ public class ProductManager implements ProductDAO {
     }
 
     @Override
-    public Product getProduct(String database, int id) {
+    public Product getProduct(int id,String db) {
         Product product = new Product();
         try {
-            PreparedStatement pstmt = conn.prepareStatement("Select  * from " + database + " where id=?");
+            PreparedStatement pstmt = conn.prepareStatement("Select  * from " + db + " where id=?");
             pstmt.setInt(1,id);
             ResultSet  resultSet = pstmt.executeQuery();
 
             while (resultSet.next()){
-
-                product.setName(resultSet.getString("name"));
-                product.setPath(resultSet.getString("price"));
                 product.setId(resultSet.getInt("id"));
+                product.setName(resultSet.getString("name"));
                 product.setPrice(resultSet.getString("price"));
                 product.setPath(resultSet.getString("path"));
-
+                product.setType(resultSet.getString("type"));
             }
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
         return product;
+    }
+
+    public List<Product> getRelatedProductList(int id, int limit,String type,String db) {
+        List<Product> productList = new ArrayList<>();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet resultSet = stmt.executeQuery("Select * from " + db +" where id != " + id + " AND type = '" + type + "' limit " + limit);
+
+            while (resultSet.next()){
+                Product product = new Product();
+                product.setId(resultSet.getInt("id"));
+                product.setName(resultSet.getString("name"));
+                product.setPrice(resultSet.getString("price"));
+                product.setPath(resultSet.getString("path"));
+                product.setType(resultSet.getString("type"));
+                productList.add(product);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return productList;
+    }
+
+    public List<Product> getRelatedProductList(int id) {
+        List<Product> productList = new ArrayList<>();
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet resultSet = stmt.executeQuery("Select * from product where id != " + id + " ORDER BY Rand() limit 5");
+
+            while (resultSet.next()){
+                Product product = new Product();
+                product.setId(resultSet.getInt("id"));
+                product.setName(resultSet.getString("name"));
+                product.setPrice(resultSet.getString("price"));
+                product.setPath(resultSet.getString("path"));
+                product.setType(resultSet.getString("type"));
+                productList.add(product);
+            }
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return productList;
     }
 
     @Override

@@ -8,12 +8,22 @@ public class HomeCard implements Serializable {
     private String price;
     private String path;
     private String type;
+    private int id;
 
     public HomeCard(){
+        id = 0;
         name = "";
         price = "";
         path = "";
         type = "";
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {

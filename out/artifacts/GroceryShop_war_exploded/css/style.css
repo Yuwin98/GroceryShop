@@ -527,7 +527,6 @@ header {
     font-size: 24px;
     color: #1E272E;
     font-family: Roboto, serif;
-
 }
 
 .featured-title-bold {
@@ -559,6 +558,21 @@ header {
     padding: 5px;
     object-fit: contain;
 
+}
+
+.fc-link {
+    color: inherit;
+    font-family: 'Roboto', 'Lato', serif;
+    text-decoration: none;
+}
+
+.fc-link:after {
+    content: "";
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .featured-card-content {

@@ -59,6 +59,7 @@ public class LoadHome extends HttpServlet {
                 homeCard.setPrice(cardSet.getString("price"));
                 homeCard.setPath(cardSet.getString("path"));
                 homeCard.setType(cardSet.getString("type"));
+                homeCard.setId(cardSet.getInt("id"));
 
                 if(cardMap.containsKey(homeCard.getType())) {
                     cardMap.get(homeCard.getType()).add(homeCard);

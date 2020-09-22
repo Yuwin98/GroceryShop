@@ -107,3 +107,23 @@ body {
     margin-top: 25px;
 }
 
+.home {
+    width: 80px;
+    height: 40px;
+    background-color: #95a5a6;
+    margin: 20px 10px 10px 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.2);
+}
+
+.home a {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    height: 100%;
+    text-decoration: none;
+    font-size: 20px;
+    color: #2c3e50;
+    margin: 10px 0 0 15px;
+}
+

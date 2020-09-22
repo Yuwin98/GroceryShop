@@ -35,8 +35,13 @@
 
 %>
 
+
+
 <div class="product-container">
         <div class="product-image">
+            <div class="home">
+                <a href="/shop">Home</a>
+            </div>
             <img src="<%=path%>" alt="Product image" class="product-page-image">
         </div>
         <div class="product-description">

@@ -31,7 +31,7 @@
             <a href="login">
                 <div class="header-login"><h3>Login</h3></div>
             </a>
-            <a href="#">
+            <a href="profile">
                 <div class="header-icon hi2">
                     <svg height="48" width="48" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2020 at 10:27 AM
+-- Generation Time: Sep 23, 2020 at 03:13 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.8
 
@@ -57,13 +57,6 @@ CREATE TABLE `cart` (
   `item_count` int(11) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`id`, `user_id`, `product_id`, `item_count`) VALUES
-(11, 1, '68', 1);
-
 -- --------------------------------------------------------
 
 --
@@ -109,13 +102,6 @@ CREATE TABLE `orders` (
   `order_date` date NOT NULL DEFAULT current_timestamp(),
   `status` enum('Delivered','Cancelled','Shipped','Processing') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `user_id`, `username`, `items`, `total`, `order_date`, `status`) VALUES
-(1, 1, 'Yuwin Sapumana', 'Pringles,Corn,Burger,Sprite\r\n', 750, '2020-08-31', 'Processing');
 
 -- --------------------------------------------------------
 
@@ -313,7 +299,7 @@ CREATE TABLE `user` (
   `email` varchar(999) NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `cart_count` int(11) NOT NULL DEFAULT 0,
-  `path` text NOT NULL,
+  `path` text NOT NULL DEFAULT 'N/A',
   `role` enum('User','Administrator') NOT NULL DEFAULT 'User',
   `online` enum('0','1') NOT NULL DEFAULT '0',
   `active` int(1) NOT NULL DEFAULT 0,
@@ -330,8 +316,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `username`, `email`, `password`, `cart_count`, `path`, `role`, `online`, `active`, `address`, `address2`, `city`, `province`, `zipcode`, `contactnumber`) VALUES
-(1, 'yuwin Mindula', 'yms98', 'yuwinsapumana212@gmail.com', 'test123', 1, 'pic.jpeg', 'Administrator', '1', 1, '138/15 Beliatta Road', '', 'Tangalle', 'Southern', 82200, '0705209530'),
-(14, 'Sapuama Mindula', 'yms', 'yuwinmindula@yahoo.com', 'abc', 0, 'N/A', 'User', '0', 1, '', '', '', '', 0, '123456789');
+(1, 'yuwin Mindula', 'yms98', 'yuwinsapumana212@gmail.com', 'test123', 0, 'pic.jpeg', 'Administrator', '0', 1, '138/15 Beliatta Road', '', 'Tangalle', 'Southern', 82200, '0705209530');
 
 --
 -- Indexes for dumped tables
@@ -396,7 +381,7 @@ ALTER TABLE `cards`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `common`
@@ -426,7 +411,7 @@ ALTER TABLE `promo`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Constraints for dumped tables
